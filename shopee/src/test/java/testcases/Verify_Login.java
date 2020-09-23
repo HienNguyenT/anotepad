@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.BasePage;
 import pages.LoginPage;
+import utils.Utils;
 
 public class Verify_Login {
     WebDriver driver;
@@ -55,6 +56,14 @@ public class Verify_Login {
         loginPage.login(account);
         String getMsg = loginPage.getMessage();
         Assert.assertEquals(getMsg, "Email and password are required");
+    }
+
+    @Test(priority = 4, description = "Verify login function successfully with json data")
+    public void test_login_successfully_with_json_data() {
+        account = Utils.account();
+        loginPage.login(account);
+        boolean doesLogoutLinkDisplay = loginPage.doesLogoutLinkDisplay();
+        Assert.assertTrue(doesLogoutLinkDisplay, "The Logout link does not display.");
     }
 
     @AfterMethod
