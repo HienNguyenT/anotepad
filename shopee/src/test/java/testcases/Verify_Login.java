@@ -47,6 +47,16 @@ public class Verify_Login {
         Assert.assertEquals(getMsg, "Email and password are required");
     }
 
+    @Test(priority = 3, description = "Verify login function with empty data")
+    public void test_login_with_empty_data() {
+        account = new Account();
+        account.setEmail("");
+        account.setPassword("");
+        loginPage.login(account);
+        String getMsg = loginPage.getMessage();
+        Assert.assertEquals(getMsg, "Email and password are required");
+    }
+
     @AfterMethod
     public void tearDown() {
         loginPage.cleanUp();
