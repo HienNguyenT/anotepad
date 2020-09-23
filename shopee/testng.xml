@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TestSuite1" parallel="tests" thread-count="1">
+    <test name="Regression with Chrome browser">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="testcases.Verify_Login"/>
+        </classes>
+    </test>
+    <test name="Regression with Firefox browser">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="testcases.Verify_Login"/>
+        </classes>
+    </test>
+</suite>
