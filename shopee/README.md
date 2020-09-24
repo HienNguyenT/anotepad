@@ -1,6 +1,7 @@
 # This project is developed on Mac, so we need to use Mac to execute the test. 
 
-Use IntelliJ IDEA to open this project Select testng.xml file to run test 
++ Use IntelliJ IDEA to open this project
++ Select testng.xml file to run test 
 
 **Note:**
 + It supports to run parallel test on Firefox and Chrome browsers. 
